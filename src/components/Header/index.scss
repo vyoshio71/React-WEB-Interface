@@ -1,0 +1,31 @@
+@use "../../sass/variables" as *;
+
+.header-container {
+  background-color: $header-background;
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  padding-left: 13px;
+  padding-top: 7px;
+  padding-bottom: 6px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 25px;
+  font-size: 20px;
+  gap: 2rem;
+}
+
+.link-navbar {
+  color: white;
+  text-decoration: none;
+}
+
+.link-navbar:hover {
+  text-decoration: underline;
+}
