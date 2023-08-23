@@ -6,6 +6,12 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import unidecode from "unidecode";
+import {
+  getJaLiBooks,
+  getQueroLerBooks,
+  saveJaLiBooks,
+  saveQueroLerBooks,
+} from "../../Utils/LocalStorageUtils";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,6 +20,8 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [modalType, setModalType] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [queroLer, setQueroLer] = useState(false);
+  const [jaLi, setJaLi] = useState(false);
 
   const handleSearch = () => {
     setSearchQuery("");
@@ -46,11 +54,22 @@ const Home = () => {
   const handleReadButton = () => {
     setModalType("read");
     setIsModalOpen(true);
+    setJaLi(true);
+    setQueroLer(false);
+    const savedJaLiBooks = getJaLiBooks();
+    saveJaLiBooks([...savedJaLiBooks, searchResults[currentBookIndex].id]);
   };
 
   const handleNotReadButton = () => {
     setModalType("notRead");
     setIsModalOpen(true);
+    setQueroLer(true);
+    setJaLi(false);
+    const savedQueroLerBooks = getQueroLerBooks();
+    saveQueroLerBooks([
+      ...savedQueroLerBooks,
+      searchResults[currentBookIndex].id,
+    ]);
   };
 
   return (
