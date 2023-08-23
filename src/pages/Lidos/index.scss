@@ -1,0 +1,31 @@
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.books-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.description-details {
+  padding-top: 25px;
+
+  h1 {
+    color: red;
+  }
+
+  b {
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 25px;
+  }
+}
