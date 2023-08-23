@@ -1,0 +1,7 @@
+@use "../../sass/variables" as *;
+
+.footer {
+  background-color: $footer-background;
+  min-height: 50px;
+  margin-top: 81px;
+}
